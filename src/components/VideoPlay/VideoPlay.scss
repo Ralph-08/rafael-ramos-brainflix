@@ -1,0 +1,16 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+.video {
+  width: 100%;
+  @include tablet {
+    width: 700px;
+  }
+
+  &__container {
+    background-color: $brainflix-darkblack;
+    display: flex;
+    justify-content: center;
+  }
+}

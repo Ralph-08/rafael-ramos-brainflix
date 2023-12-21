@@ -10,7 +10,7 @@ body {
 }
 
 html body {
-  font-family: sans-serif;
+  font-family: "Avenir";
 }
 
 h1,
@@ -18,19 +18,40 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
   padding: 0;
 }
 
 h1 {
   font-size: 1.5rem;
+  font-family: "Avenir";
+  font-weight: 400;
+  margin: 24px 0 16px;
+  line-height: 2rem;
+  @include tablet {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "Avenir";
+  font-weight: 400;
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 ul,
 ol {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 button {
@@ -51,7 +72,8 @@ button {
   }
 }
 
-nav {
+nav,
+main {
   padding: 1rem;
   @include tablet {
     padding: 1rem 2rem;

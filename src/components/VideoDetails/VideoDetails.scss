@@ -1,0 +1,68 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+.details {
+  padding: 0 1rem;
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+    padding: 1rem 4rem;
+  }
+
+  &__title {
+    font-family: "AvenirNext";
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    border-bottom: 1px solid $silver;
+
+    &:first-child {
+      @include tablet {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__list {
+    padding: 1rem 0;
+    display: flex;
+    column-gap: 5rem;
+    @include tablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: $mobile-row-gap;
+    @include tablet {
+      flex-direction: row;
+      column-gap: $tablet-row-gap;
+    }
+
+    .item__container {
+      display: flex;
+      column-gap: 0.5rem;
+    }
+  }
+
+  &__info {
+    color: $silver;
+
+    &--bold {
+      color: $brainflix-darkblack;
+      font-family: "Avenir";
+      font-weight: 600;
+    }
+  }
+
+  &__desc {
+    margin-top: 1rem;
+  }
+}
