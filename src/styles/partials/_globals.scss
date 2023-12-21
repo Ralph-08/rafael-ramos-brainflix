@@ -4,26 +4,59 @@
 
 html,
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html body {
+  font-family: sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 ul,
 ol {
-    padding: 0;
+  padding: 0;
+  margin: 0;
 }
 
+button {
+  background-color: $brainflix-blue;
+  border: none;
+  color: $white;
+  padding: 1.3rem 2rem;
+  height: 36px;
+  width: 100%;
+  border-radius: 4px;
+  font-family: "Avenir";
+  font-weight: 700;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $brainflix-darkblue;
+    cursor: pointer;
+  }
+}
+
+nav {
+  padding: 1rem;
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+    padding: 1rem 4rem;
+  }
+}
