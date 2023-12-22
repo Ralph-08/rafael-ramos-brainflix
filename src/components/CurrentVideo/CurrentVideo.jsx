@@ -4,7 +4,6 @@ import CommentsList from "../CommentsList/CommentsList";
 import AddComment from "../AddComment/AddComment";
 
 const CurrentVideo = ({
-  image,
   title,
   channel,
   timestamp,
@@ -14,10 +13,7 @@ const CurrentVideo = ({
   comments,
 }) => {
   return (
-    <>
-      <section className="video__container">
-        <video controls poster={image} className="video"></video>
-      </section>
+    <section className="video__info">
       <VideoDetails
         title={title}
         channel={channel}
@@ -28,7 +24,7 @@ const CurrentVideo = ({
       />
       <AddComment commentCount={comments} />
       <CommentsList comments={comments} />
-    </>
+    </section>
   );
 };
 

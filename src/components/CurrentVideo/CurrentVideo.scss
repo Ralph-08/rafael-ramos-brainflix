@@ -1,20 +1,3 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/globals" as *;
-
-.video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  @include tablet {
-    width: 700px;
-  }
-  @include desktop {
-    width: 900px;
-  }
-
-  &__container {
-    background-color: $brainflix-darkblack;
-    display: flex;
-    justify-content: center;
-  }
-}

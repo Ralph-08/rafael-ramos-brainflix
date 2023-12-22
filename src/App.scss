@@ -3,5 +3,12 @@
 @use "./styles/partials/globals" as *;
 
 .main {
-    padding: 0;
+  padding: 0;
+
+  @include desktop {
+    display: flex;
+    padding: 0 6rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }

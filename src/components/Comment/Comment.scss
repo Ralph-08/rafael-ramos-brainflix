@@ -11,6 +11,15 @@
     @include tablet {
       padding: $tablet-row-gap 0;
     }
+    @include desktop {
+      padding-right: 2rem;
+    }
+
+    &:last-child {
+      @include desktop {
+        border-bottom: none;
+      }
+    }
   }
 
   &__profile-pic {

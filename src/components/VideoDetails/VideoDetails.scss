@@ -8,9 +8,9 @@
     padding: 1rem 2rem;
   }
   @include desktop {
-    padding: 1rem 6rem;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 1rem 0;
   }
 
   &__title {
@@ -37,6 +37,9 @@
     column-gap: 5rem;
     @include tablet {
       justify-content: space-between;
+    }
+    @include desktop {
+      padding-right: 2rem;
     }
   }
 
@@ -67,5 +70,8 @@
 
   &__desc {
     margin-top: 1rem;
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 }
