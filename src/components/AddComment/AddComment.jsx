@@ -22,16 +22,18 @@ const AddComment = ({ commentCount }) => {
           />
         </section>
         <form onSubmit={postComment} className="add-comment__form">
-          <label className="add-comment__label bold" htmlFor="comment">
-            JOIN THE CONVERSATION
-          </label>
-          <textarea
-            className="add-comment__textarea"
-            type="text"
-            name="comment"
-            id="commnet"
-            placeholder="Add a new comment"
-          />
+          <section className="form-container">
+            <label className="add-comment__label bold" htmlFor="comment">
+              JOIN THE CONVERSATION
+            </label>
+            <textarea
+              className="add-comment__textarea"
+              type="text"
+              name="comment"
+              id="commnet"
+              placeholder="Add a new comment"
+            />
+          </section>
           <section className="add-comment__btn-container">
             <img
               className="add-comment__btn-icon"
