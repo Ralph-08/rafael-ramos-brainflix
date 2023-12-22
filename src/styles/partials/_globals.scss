@@ -3,7 +3,8 @@
 @use "./variables.scss" as *;
 
 html,
-body {
+body, 
+main {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

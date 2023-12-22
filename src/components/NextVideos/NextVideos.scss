@@ -1,0 +1,20 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+.next-videos {
+    padding: 0 1rem;
+    @include tablet {
+        padding: 0 2rem;
+    }
+
+    &__subheader {
+        font-size: 12px;
+        margin-bottom: 1rem;
+        color: $silver;
+        font-weight: 600;
+        @include tablet {
+            margin: 1.5rem 0 1.6rem;
+        }
+    }
+}
