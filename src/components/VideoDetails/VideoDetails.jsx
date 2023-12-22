@@ -12,7 +12,13 @@ const VideoDetails = ({ title, channel, timestamp, views, likes, desc }) => {
         <ul className="details__list">
           <li className="details__item">
             <p className="details__info details__info--bold">By {channel}</p>
-            <p className="details__info">{timestamp}</p>
+            <p className="details__info">
+              {new Date(timestamp).toLocaleDateString("en-US", {
+                month: "2-digit",
+                day: "2-digit",
+                year: "numeric",
+              })}
+            </p>
           </li>
           <li className="details__item">
             <div className="item__container">

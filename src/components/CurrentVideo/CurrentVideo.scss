@@ -4,8 +4,12 @@
 
 .video {
   width: 100%;
+  aspect-ratio: 16 / 9;
   @include tablet {
     width: 700px;
+  }
+  @include desktop {
+    width: 900px;
   }
 
   &__container {

@@ -1,5 +1,6 @@
 import "./CurrentVideo.scss";
 import VideoDetails from "../VideoDetails/VideoDetails";
+import CommentsList from "../CommentsList/CommentsList";
 
 const CurrentVideo = ({
   image,
@@ -9,7 +10,7 @@ const CurrentVideo = ({
   views,
   likes,
   desc,
-  comments
+  comments,
 }) => {
   return (
     <>
@@ -23,8 +24,8 @@ const CurrentVideo = ({
         views={views}
         likes={likes}
         desc={desc}
-        comments={comments}
       />
+      <CommentsList comments={comments} />
     </>
   );
 };

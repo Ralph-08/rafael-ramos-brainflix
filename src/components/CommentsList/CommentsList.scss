@@ -1,0 +1,16 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+.comments-list {
+  border-top: 1px solid $mercury;
+  margin: 1rem;
+  @include tablet {
+    margin: 1rem 2rem;
+  }
+  @include desktop {
+    margin: 1rem 6rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}

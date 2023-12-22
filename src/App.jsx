@@ -1,6 +1,6 @@
 import "./App.scss";
 import Nav from "./components/Nav/Nav";
-import VideoPlay from "./components/CurrentVideo/CurrentVideo";
+import CurrentVideo from "./components/CurrentVideo/CurrentVideo";
 import videoDetailsList from "./data/video-details.json";
 import { useState } from "react";
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Nav />
-      <VideoPlay
+      <CurrentVideo
         image={currentVideo.image}
         title={currentVideo.title}
         channel={currentVideo.channel}

@@ -8,18 +8,21 @@
     padding: 1rem 2rem;
   }
   @include desktop {
-    padding: 1rem 4rem;
+    padding: 1rem 6rem;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   &__title {
-    font-family: "AvenirNext";
+    font-family: "Avenir";
+    font-weight: 600;
     @include tablet {
       margin-bottom: 0;
     }
   }
 
   &__card {
-    border-bottom: 1px solid $silver;
+    border-bottom: 1px solid $mercury;
 
     &:first-child {
       @include tablet {
