@@ -1,7 +1,7 @@
 import "./NextVideos.scss";
 import VideoCard from "../VideoCard/VideoCard";
 
-const NextVideos = ({ videosList }) => {
+const NextVideos = ({ videosList, changeVideo }) => {
   return (
     <section className="next-videos">
       <h2 className="next-videos__subheader">NEXT VIDEOS</h2>
@@ -14,6 +14,7 @@ const NextVideos = ({ videosList }) => {
               title={video.title}
               channel={video.channel}
               image={video.image}
+              changeVideo={changeVideo}
             />
           );
         })}

@@ -6,6 +6,7 @@
   display: flex;
   column-gap: 1rem;
   margin-bottom: 1rem;
+  cursor: pointer;
   @include tablet {
     margin-bottom: 1.5rem;
   }
@@ -26,7 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     @include tablet {
-        width: 180px;
+      width: 180px;
     }
   }
 }

@@ -3,12 +3,23 @@ import Nav from "./components/Nav/Nav";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import CurrentVideo from "./components/CurrentVideo/CurrentVideo";
 import videoDetailsList from "./data/video-details.json";
-import videos from "./data/videos.json";
 import NextVideos from "./components/NextVideos/NextVideos";
 import { useState } from "react";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetailsList[0]);
+
+  const changeVideo = (id) => {
+    const findVideo = videoDetailsList.find((video) =>
+      video.id === id ? true : false
+    );
+    setCurrentVideo(findVideo);
+  };
+
+  const filteredVideos = videoDetailsList.filter((video) => {
+    return video.id !== currentVideo.id;
+  });
+
   return (
     <>
       <Nav />
@@ -26,7 +37,7 @@ function App() {
           desc={currentVideo.description}
           comments={currentVideo.comments}
         />
-        <NextVideos videosList={videos} />
+        <NextVideos videosList={filteredVideos} changeVideo={changeVideo} />
       </main>
     </>
   );
