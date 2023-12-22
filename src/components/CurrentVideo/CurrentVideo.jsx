@@ -1,6 +1,7 @@
 import "./CurrentVideo.scss";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import CommentsList from "../CommentsList/CommentsList";
+import AddComment from "../AddComment/AddComment";
 
 const CurrentVideo = ({
   image,
@@ -25,6 +26,7 @@ const CurrentVideo = ({
         likes={likes}
         desc={desc}
       />
+      <AddComment commentCount={comments} />
       <CommentsList comments={comments} />
     </>
   );

@@ -7,7 +7,7 @@ import { useState } from "react";
 console.log(videoDetailsList);
 
 function App() {
-  const [currentVideo, setCurrentVideo] = useState(videoDetailsList[0]);
+  const [currentVideo, setCurrentVideo] = useState(videoDetailsList[1]);
   return (
     <>
       <Nav />

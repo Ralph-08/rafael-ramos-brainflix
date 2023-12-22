@@ -58,17 +58,31 @@ button {
   background-color: $brainflix-blue;
   border: none;
   color: $white;
-  padding: 1.3rem 2rem;
+  padding: 1rem 2rem;
   height: 36px;
   width: 100%;
   border-radius: 4px;
   font-family: "Avenir";
   font-weight: 700;
   transition: background-color 0.2s;
+  @include tablet {
+    padding: 1.3rem 2rem;
+  }
 
   &:hover {
     background-color: $brainflix-darkblue;
     cursor: pointer;
+  }
+}
+
+button,
+label,
+input,
+textarea {
+  font-size: 0.625rem;
+  font-family: "Avenir";
+  @include tablet {
+    font-size: 0.75rem;
   }
 }
 
@@ -84,6 +98,6 @@ main {
 }
 
 .bold {
-  font-family: 'Avenir';
+  font-family: "Avenir";
   font-weight: 600;
 }
