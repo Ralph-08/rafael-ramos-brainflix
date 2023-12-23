@@ -3,7 +3,7 @@
 @use "./variables.scss" as *;
 
 html,
-body, 
+body,
 main {
   box-sizing: border-box;
   margin: 0;
@@ -74,6 +74,26 @@ button {
     background-color: $brainflix-darkblue;
     cursor: pointer;
   }
+}
+
+input,
+textarea {
+  outline-style: none;
+  &::placeholder {
+    color: $brainflix-darkblack;
+  }
+
+  &:focus {
+    border-color: $brainflix-blue;
+  }
+}
+
+.input-error {
+  border-color: red;
+}
+
+.input-error:focus {
+  border-color: red;
 }
 
 button,

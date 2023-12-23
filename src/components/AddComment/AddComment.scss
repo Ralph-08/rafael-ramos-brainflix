@@ -78,19 +78,14 @@
     height: 60px;
     margin-top: 0.3rem;
     padding: 0.6rem;
-    outline-style: none;
     @include tablet {
       width: 95%;
       height: 18px;
       display: flex;
     }
 
-    &::placeholder {
-      color: $brainflix-darkblack;
-    }
-
-    &:focus {
-      border-color: $brainflix-blue;
+    &--error {
+      border-color: red;
     }
   }
 

@@ -3,9 +3,20 @@ import addCommentIcon from "../../assets/icons/add_comment.svg";
 import userProfilePic from "../../assets/images/Mohan-muruge.jpg";
 
 const AddComment = ({ commentCount }) => {
+  
   const postComment = (e) => {
     e.preventDefault();
-    console.log(e);
+    e.target.comment.value = "";
+  };
+
+  const validateForm = () => {
+    const inputEl = document.getElementById("comment");
+
+    if (inputEl.value === "") {
+      inputEl.classList.add("input-error");
+    } else {
+      inputEl.classList.remove("input-error");
+    }
   };
 
   return (
@@ -30,8 +41,9 @@ const AddComment = ({ commentCount }) => {
               className="add-comment__textarea"
               type="text"
               name="comment"
-              id="commnet"
+              id="comment"
               placeholder="Add a new comment"
+              required
             />
           </section>
           <section className="add-comment__btn-container">
@@ -40,7 +52,12 @@ const AddComment = ({ commentCount }) => {
               src={addCommentIcon}
               alt="comment icon"
             />
-            <button className="add-comment__btn">COMMENT</button>
+            <button
+              className="add-comment__btn"
+              onClick={() => validateForm()}
+            >
+              COMMENT
+            </button>
           </section>
         </form>
       </section>
