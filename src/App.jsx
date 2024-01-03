@@ -4,7 +4,9 @@ import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import CurrentVideo from "./components/CurrentVideo/CurrentVideo";
 import videoDetailsList from "./data/video-details.json";
 import NextVideos from "./components/NextVideos/NextVideos";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { API_URL, API_KEY } from "./utils/utils";
+import axios from "axios";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetailsList[0]);
@@ -19,6 +21,19 @@ function App() {
   const filteredVideos = videoDetailsList.filter((video) => {
     return video.id !== currentVideo.id;
   });
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const videosRes = await axios.get(`${API_URL}/videos${API_KEY}`);
+        console.log(videosRes.data);
+      } catch (err) {
+        console.log('Error:', err)
+      }
+    }
+
+    fetchVideos();
+  }, [])
 
   return (
     <>
