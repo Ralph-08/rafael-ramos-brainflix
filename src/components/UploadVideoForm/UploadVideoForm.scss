@@ -8,15 +8,31 @@
   border-top: 1px solid $mercury;
   padding: 0 1rem;
   font-family: "Avenir";
-  //   font-weight: 800;
+  @include tablet {
+    padding: 0 1.5rem;
+  }
 
   &__header {
     padding: 1.5rem 0 1rem;
+    font-size: 1.5em;
+    @include tablet {
+      padding: 2.25rem 0 1.5rem;
+      font-size: 2.0625em;
+      font-weight: 900;
+      font-family: "AvenirNext";
+      border-bottom: 1px solid $mercury;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__thumbnail {
     border-radius: 4px;
     margin-bottom: 1rem;
+    background-color: $mercury;
+    @include tablet {
+      width: 350px;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__subheader {
@@ -38,19 +54,27 @@
       font-weight: bolder;
       padding-bottom: 0.2rem;
     }
+
     &__textarea {
       height: 3rem;
+      border-bottom: 1px solid red;
     }
+
     &__input,
     &__textarea {
       margin-bottom: 1rem;
       outline-style: none;
-      width: 100%;
+      width: 93.5%;
       resize: none;
       border: 1px solid $mercury;
       background-color: $alabaster;
       border-radius: 4px;
       padding: 0.6rem;
+      @include tablet {
+        width: 97%;
+        margin-bottom: 1.3rem;
+      }
+
       &::placeholder {
         color: $brainflix-darkblack;
       }
@@ -61,29 +85,51 @@
       flex-direction: column-reverse;
       @include tablet {
         flex-direction: row;
+        border-top: 1px solid $mercury;
+        padding-top: 1.5rem;
+        justify-content: flex-end;
       }
     }
 
     &__btn {
       margin-bottom: 1rem;
-
-      &__btn-icon {
-        position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include tablet {
+        width: 150px;
+        // justify-content: flex-start;
+        // padding-left: .3rem;
       }
 
       &--primary {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include tablet {
+            justify-content: flex-start;
+            padding-left: .5rem;
+        }
       }
+
       &--secondary {
         background-color: #ffffff;
         color: $brainflix-blue;
       }
     }
-    &__btn-container {
+    &__btn-icon {
+      position: absolute;
+      width: 20px;
+      left: 10px;
+      top: 8px;
+
+      &--tablet {
+        display: none;
+        @include tablet {
+            display: block;
+            margin-right: 1.3rem;
+        }
+      }
+    }
+    &__btns-container {
       position: relative;
     }
   }
-
 }
