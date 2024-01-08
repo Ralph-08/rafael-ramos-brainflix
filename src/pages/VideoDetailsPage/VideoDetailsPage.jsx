@@ -1,4 +1,4 @@
-import "./Page.scss";
+import "./VideoDetailsPage.scss";
 import Nav from "../../components/Nav/Nav";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
@@ -8,9 +8,9 @@ import axios from "axios";
 import { API_URL, API_KEY } from "../../utils/utils";
 import { useParams } from "react-router-dom";
 
-const Page = () => {
+const VideoDetailsPage = () => {
   const [currentVideo, setCurrentVideo] = useState(null);
-  const [videoList, setVideoList] = useState([]);
+  const [videoList, setVideoList] = useState(null);
   const { videoId } = useParams();
 
   const fetchCurrentVideo = async () => {
@@ -42,6 +42,10 @@ const Page = () => {
     return <h2 className="loading-header">Loading...</h2>;
   }
 
+  if (videoList === null) {
+    return <h2 className="loading-header">Loading...</h2>;
+  }
+
   const changeVideo = (id) => {
     const findVideo = videoList.find((video) =>
       video.id === id ? true : false
@@ -69,4 +73,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default VideoDetailsPage;

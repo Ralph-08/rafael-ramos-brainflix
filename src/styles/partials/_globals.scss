@@ -76,8 +76,11 @@ button {
   }
 }
 
+
 input,
-textarea {
+textarea,
+.input,
+.textarea {
   outline-style: none;
   &::placeholder {
     color: $brainflix-darkblack;

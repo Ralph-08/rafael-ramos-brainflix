@@ -3,11 +3,14 @@ import logo from "../../assets/logo/BrainFlix-logo.svg";
 import searchIcon from "../../assets/icons/search.svg";
 import userPic from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/icons/upload.svg";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
     <nav className="nav">
-      <img className="nav__logo" src={logo} alt="brainflix logo" />
+      <Link to='/'>
+        <img className="nav__logo" src={logo} alt="brainflix logo" />
+      </Link>
       <section className="nav__right-container">
         <ul className="nav__list">
           <li className="nav__item">
@@ -24,14 +27,16 @@ const Nav = () => {
                   placeholder="Search"
                 />
               </div>
-              <button className="nav__btn nav__btn--tablet">
-                <img
-                  className="nav__btn-icon nav__btn-icon--tablet"
-                  src={upload}
-                  alt="upload icon"
-                />
-                UPLOAD
-              </button>
+              <Link to="/upload" className="nav-btn__link">
+                <button className="nav__btn nav__btn--tablet">
+                  <img
+                    className="nav__btn-icon nav__btn-icon--tablet"
+                    src={upload}
+                    alt="upload icon"
+                  />
+                  UPLOAD
+                </button>
+              </Link>
               <div className="nav__user-pic--container">
                 <img
                   className="nav__user-pic"
@@ -42,10 +47,12 @@ const Nav = () => {
             </div>
           </li>
         </ul>
-        <button className="nav__btn nav__btn--mobile">
-          <img className="nav__btn-icon" src={upload} alt="upload icon" />
-          UPLOAD
-        </button>
+        <Link to="/upload" className="nav-btn__link">
+          <button className="nav__btn nav__btn--mobile">
+            <img className="nav__btn-icon" src={upload} alt="upload icon" />
+            UPLOAD
+          </button>
+        </Link>
       </section>
     </nav>
   );

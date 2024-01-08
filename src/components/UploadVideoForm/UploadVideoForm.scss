@@ -1,0 +1,89 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals.scss" as *;
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $mercury;
+  padding: 0 1rem;
+  font-family: "Avenir";
+  //   font-weight: 800;
+
+  &__header {
+    padding: 1.5rem 0 1rem;
+  }
+
+  &__thumbnail {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  &__subheader {
+    font-size: 0.625em;
+    color: $silver;
+    font-weight: bolder;
+    padding-bottom: 0.2rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .form {
+    &__label {
+      display: flex;
+      flex-direction: column;
+      color: $silver;
+      font-weight: bolder;
+      padding-bottom: 0.2rem;
+    }
+    &__textarea {
+      height: 3rem;
+    }
+    &__input,
+    &__textarea {
+      margin-bottom: 1rem;
+      outline-style: none;
+      width: 100%;
+      resize: none;
+      border: 1px solid $mercury;
+      background-color: $alabaster;
+      border-radius: 4px;
+      padding: 0.6rem;
+      &::placeholder {
+        color: $brainflix-darkblack;
+      }
+    }
+
+    &__btns-container {
+      display: flex;
+      flex-direction: column-reverse;
+      @include tablet {
+        flex-direction: row;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 1rem;
+
+      &__btn-icon {
+        position: absolute;
+      }
+
+      &--primary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &--secondary {
+        background-color: #ffffff;
+        color: $brainflix-blue;
+      }
+    }
+    &__btn-container {
+      position: relative;
+    }
+  }
+
+}
