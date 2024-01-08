@@ -11,6 +11,10 @@
   @include tablet {
     padding: 0 1.5rem;
   }
+  @include desktop {
+    max-width: 1055px;
+    margin: 0 auto;
+  }
 
   &__header {
     padding: 1.5rem 0 1rem;
@@ -25,34 +29,66 @@
     }
   }
 
-  &__thumbnail {
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    background-color: $mercury;
-    @include tablet {
-      width: 350px;
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  &__subheader {
-    font-size: 0.625em;
-    color: $silver;
-    font-weight: bolder;
-    padding-bottom: 0.2rem;
-  }
-
   &__container {
     display: flex;
     flex-direction: column;
   }
+  
   .form {
+    &__subheader {
+      font-size: 0.625em;
+      color: $silver;
+      font-weight: bolder;
+      padding-bottom: 0.2rem;
+      @include tablet {
+        font-size: 0.75rem;
+      }
+    }
+
     &__label {
       display: flex;
       flex-direction: column;
       color: $silver;
       font-weight: bolder;
       padding-bottom: 0.2rem;
+      row-gap: 0.3rem;
+      @include tablet {
+        font-size: 0.75rem;
+      }
+      @include desktop {
+        row-gap: 0.3rem;
+      }
+    }
+
+    &__container {
+      @include desktop {
+        display: flex;
+        column-gap: $tablet-column-gap;
+        align-items: center;
+      }
+    }
+
+    &__fields {
+      width: 100%;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+    }
+
+    &__thumbnail {
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background-color: $mercury;
+      width: 100%;
+      @include tablet {
+        width: 350px;
+        margin-bottom: 1.5rem;
+      }
+      @include desktop {
+        width: 310px;
+      }
     }
 
     &__textarea {
@@ -98,14 +134,12 @@
       align-items: center;
       @include tablet {
         width: 150px;
-        // justify-content: flex-start;
-        // padding-left: .3rem;
       }
 
       &--primary {
         @include tablet {
-            justify-content: flex-start;
-            padding-left: .5rem;
+          justify-content: flex-start;
+          padding-left: 0.5rem;
         }
       }
 
@@ -119,12 +153,15 @@
       width: 20px;
       left: 10px;
       top: 8px;
+      @include tablet {
+        display: none;
+      }
 
       &--tablet {
         display: none;
         @include tablet {
-            display: block;
-            margin-right: 1.3rem;
+          display: block;
+          margin-right: 1.3rem;
         }
       }
     }
