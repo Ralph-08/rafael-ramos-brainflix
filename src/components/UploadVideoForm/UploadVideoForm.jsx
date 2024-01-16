@@ -4,11 +4,12 @@ import thumbnailImg from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
 import axios from "axios";
 import thumbnailPic from "../../assets/images/Upload-video-preview.jpg";
+import { API_URL } from "../../utils/utils";
 
 const UploadVideoForm = () => {
   const postComment = async (obj) => {
     try {
-      const res = await axios.post(`http://localhost:8080/upload`, obj);
+      const res = await axios.post(`${API_URL}/upload`, obj);
     } catch (err) {
       console.log("Error posting video: ", err);
     }

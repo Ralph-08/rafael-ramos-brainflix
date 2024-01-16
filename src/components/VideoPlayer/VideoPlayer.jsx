@@ -1,11 +1,12 @@
 import "./VideoPlayer.scss";
+import { API_URL } from "../../utils/utils";
 
 const VideoPlayer = ({ image }) => {
   return (
     <section className="video__container">
       <video
         controls
-        poster={`http://localhost:8080/thumbnails/${image}`}
+        poster={`${API_URL}/thumbnails/${image}`}
         className="video"
       ></video>
     </section>

@@ -6,6 +6,7 @@ import NextVideos from "../../components/NextVideos/NextVideos";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { API_URL } from "../../utils/utils";
 
 const HomePage = () => {
   const [currentVideo, setCurrentVideo] = useState(null);
@@ -14,7 +15,7 @@ const HomePage = () => {
 
   const fetchCurrentVideo = async () => {
     try {
-      const videosRes = await axios.get(`http://localhost:8080/`);
+      const videosRes = await axios.get(API_URL);
       setCurrentVideo(videosRes.data[0]);
     } catch (err) {
       console.log("Error:", err);
@@ -23,7 +24,7 @@ const HomePage = () => {
 
   const fetchVideos = async () => {
     try {
-      const videosRes = await axios.get(`http://localhost:8080/videos`);
+      const videosRes = await axios.get(`${API_URL}/videos`);
       setVideoList(videosRes.data);
     } catch (err) {
       console.log("Error getting list: ", err);
