@@ -3,24 +3,19 @@ import "../../styles/partials/_globals.scss";
 import thumbnailImg from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
 import axios from "axios";
-import { API_URL } from "../../utils/utils";
-import thumbnailPic from "../../assets/images/Upload-video-preview.jpg"
+import thumbnailPic from "../../assets/images/Upload-video-preview.jpg";
 
 const UploadVideoForm = () => {
-
   const postComment = async (obj) => {
     try {
       const res = await axios.post(`http://localhost:8080/upload`, obj);
-      console.log(res);
     } catch (err) {
-      console.log('Error posting video: ', err)
+      console.log("Error posting video: ", err);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(e.target.title.value);
 
     const obj = {
       title: e.target.title.value,
@@ -30,8 +25,35 @@ const UploadVideoForm = () => {
     };
 
     postComment(obj);
+
+    e.target.title.value = "";
+    e.target.desc.value = "";
   };
 
+  const validateForm = () => {
+    const input = document.querySelector(".form__input");
+    const textarea = document.querySelector(".form__textarea");
+
+    if (!input.value && !textarea.value) {
+      input.classList.add("err");
+      textarea.classList.add("err");
+    } else if (!input.value) {
+      input.classList.add("err");
+    } else if (!textarea.value) {
+      textarea.classList.add("err");
+    } else {
+      input.classList.remove("err");
+      textarea.classList.remove("err");
+    }
+  };
+
+  const cancelUpload = () => {
+    const input = document.querySelector(".form__input");
+    const textarea = document.querySelector(".form__textarea");
+
+    input.value = "";
+    textarea.value = "";
+  };
 
   return (
     <section className="upload">
@@ -54,6 +76,7 @@ const UploadVideoForm = () => {
                 type="text"
                 placeholder="Add a title to your video"
                 name="title"
+                required
               />
             </label>
             <label className="form__label">
@@ -63,20 +86,29 @@ const UploadVideoForm = () => {
                 type="text"
                 placeholder="Add a description to your video"
                 name="desc"
+                required
               />
             </label>
           </div>
         </div>
 
         <div className="form__btns-container">
-          <button className="form__btn form__btn--secondary">CANCEL</button>
+          <button
+            onClick={cancelUpload}
+            className="form__btn form__btn--secondary"
+          >
+            CANCEL
+          </button>
           <div className="btn__container">
             <img
               className="form__btn-icon"
               src={publishIcon}
               alt="publish icon"
             />
-            <button className="form__btn form__btn--primary">
+            <button
+              onClick={validateForm}
+              className="form__btn form__btn--primary"
+            >
               <img
                 className="form__btn-icon--tablet"
                 src={publishIcon}

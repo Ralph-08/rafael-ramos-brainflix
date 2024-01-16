@@ -10,7 +10,6 @@ const CurrentVideo = ({ selectedVideo }) => {
   const [currentVideo, setCurrentVideo] = useState(null);
 
   const changeVideo = async (videoId) => {
-    // console.log(videoId);
     try {
       const videoRes = await axios.get(getVideo(videoId));
       setCurrentVideo(videoRes.data);

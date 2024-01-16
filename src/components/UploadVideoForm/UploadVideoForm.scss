@@ -168,5 +168,9 @@
     &__btns-container {
       position: relative;
     }
+
+    .err {
+        border-color: red;
+    }
   }
 }
