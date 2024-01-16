@@ -1,5 +1,6 @@
 import "./VideoCard.scss";
 import { Link } from "react-router-dom";
+import { API_URL } from "../../utils/utils";
 
 const VideoCard = ({ id, title, channel, image, changeVideo }) => {
   return (
@@ -7,8 +8,8 @@ const VideoCard = ({ id, title, channel, image, changeVideo }) => {
       <Link className="video-card__link" to={`/videos/${id}`}>
         <img
           className="video-card__thumbnail"
-          src={image}
-          alt="video thumbnail"
+          src={`${API_URL}/thumbnails/${image}`}
+          alt={image}
         />
         <section className="video-card__container">
           <p className="video-card__title bold">{title}</p>

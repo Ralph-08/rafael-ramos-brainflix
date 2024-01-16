@@ -2,12 +2,41 @@ import "./UploadVideoForm.scss";
 import "../../styles/partials/_globals.scss";
 import thumbnailImg from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
+import axios from "axios";
+import { API_URL } from "../../utils/utils";
+import thumbnailPic from "../../assets/images/Upload-video-preview.jpg"
 
 const UploadVideoForm = () => {
+
+  const postComment = async (obj) => {
+    try {
+      const res = await axios.post(`http://localhost:8080/upload`, obj);
+      console.log(res);
+    } catch (err) {
+      console.log('Error posting video: ', err)
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(e.target.title.value);
+
+    const obj = {
+      title: e.target.title.value,
+      description: e.target.desc.value,
+      timestamp: Date.now(),
+      image: thumbnailPic,
+    };
+
+    postComment(obj);
+  };
+
+
   return (
     <section className="upload">
       <h2 className="upload__header">Upload Video</h2>
-      <form action="" className="form">
+      <form onSubmit={handleSubmit} className="form">
         <div className="form__container">
           <div className="form__flex-container">
             <p className="form__subheader">VIDEO THUMBNAIL</p>
@@ -24,6 +53,7 @@ const UploadVideoForm = () => {
                 className="form__input input"
                 type="text"
                 placeholder="Add a title to your video"
+                name="title"
               />
             </label>
             <label className="form__label">
@@ -32,6 +62,7 @@ const UploadVideoForm = () => {
                 className="form__textarea textarea"
                 type="text"
                 placeholder="Add a description to your video"
+                name="desc"
               />
             </label>
           </div>

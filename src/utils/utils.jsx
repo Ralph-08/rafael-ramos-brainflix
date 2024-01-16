@@ -1,6 +1,5 @@
-const API_URL = "https://project-2-api.herokuapp.com";
-const API_KEY = "?api_key=5818c0c8-34e0-4074-bd0a-575018f154ba";
+const API_URL = "http://localhost:8080";
 
-const getVideo = (videoId) => `${API_URL}/videos/${videoId}${API_KEY}`;
+const getVideo = (videoId) => `http://localhost:8080/videos/${videoId}`;
 
-export { API_URL, API_KEY, getVideo };
+export { API_URL, getVideo };

@@ -5,7 +5,6 @@ import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { API_URL, API_KEY } from "../../utils/utils";
 import { useParams } from "react-router-dom";
 
 const HomePage = () => {
@@ -15,10 +14,8 @@ const HomePage = () => {
 
   const fetchCurrentVideo = async () => {
     try {
-      const videosRes = await axios.get(
-        `${API_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8${API_KEY}`
-      );
-      setCurrentVideo(videosRes.data);
+      const videosRes = await axios.get(`http://localhost:8080/`);
+      setCurrentVideo(videosRes.data[0]);
     } catch (err) {
       console.log("Error:", err);
     }
@@ -26,7 +23,7 @@ const HomePage = () => {
 
   const fetchVideos = async () => {
     try {
-      const videosRes = await axios.get(`${API_URL}/videos${API_KEY}`);
+      const videosRes = await axios.get(`http://localhost:8080/videos`);
       setVideoList(videosRes.data);
     } catch (err) {
       console.log("Error getting list: ", err);
@@ -40,11 +37,11 @@ const HomePage = () => {
 
   if (currentVideo === null) {
     return <h2 className="loading-header">Loading...</h2>;
-  };
+  }
 
   if (videoList === null) {
     return <h2 className="loading-header">Loading...</h2>;
-  };
+  }
 
   const changeVideo = (id) => {
     const findVideo = videoList.find((video) =>
